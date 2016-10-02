@@ -25,6 +25,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.apiNameSpace = 'dev';
+    ENV.APP.apiHost = 'http://ec2-52-45-26-25.compute-1.amazonaws.com:5050';
   }
 
   if (environment === 'test') {
@@ -39,7 +41,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.apiNameSpace = 'dev';
+    ENV.APP.apiHost = 'http://ec2-52-45-26-25.compute-1.amazonaws.com:5050';
   }
 
   return ENV;

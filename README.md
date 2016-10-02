@@ -1,53 +1,33 @@
-# Work-prerequisite
+<!-- Installation -->
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+npm install
+./node_modules/.bin/bower install
+npm start
 
-## Prerequisites
+Browse to http://127.0.0.1:4200
 
-You will need the following things properly installed on your computer.
+<!-- Requirements -->
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+2)
 
-## Installation
+Listing of Hotels -> Rooms -> Rates should accomplish the hotel_id and rate_id selection.
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+Clicking on Buy button for the rates generates the GET with the heaers
 
-## Running / Development
+3)
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+apiHost and apiNameSpace are set in config/environment which are used by the application adapter
 
-### Code Generators
+4)
 
-Make use of the many generators for code, try `ember help generate` for more details
+The hotel findallreponse was normalized to allow ember data to reconize the hasMany relationship for the rooms. Also the rooms are normalized in the response adding the key as requested. 
 
-### Running Tests
+There's also a room serializer which inserts the id as requested.
 
-* `ember test`
-* `ember test --server`
+# Headers
 
-### Building
+Headers are set lazily in the room adapter, which is only touched by the app when generating the request to buy the room (select rate). Check the room adapter for general description of how would I do it in real life.
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+# NOTES
 
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+I'm not sure if there is a problem with the data but the rates have the same price for the same room. Now I know they are different rates for the same room as the base64 is different.

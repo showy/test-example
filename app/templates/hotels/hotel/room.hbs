@@ -1,0 +1,21 @@
+<h3>
+  Room details
+</h3>
+<div>
+  <ul>
+    <li>Name: {{model.name}}</li>
+    <li>Cat: {{model.category}}</li>
+    <li>Meal Plan: {{model.mealPlan}}</li>
+  </ul>
+
+  <h2>Available rates:</h2>
+  <ul>
+    {{#each model.rates as |rate| }}
+
+      <li>
+         {{ rate.packageGroup }}: {{  rate.priceWithTax }}{{ rate.currency }}
+         <button class='btn btn-default' {{ action 'buy' rate }}> Buy</button>
+      </li>
+    {{/each}}
+  </ul>
+</div>
