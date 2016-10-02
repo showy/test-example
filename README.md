@@ -1,3 +1,6 @@
+# Requirements
+Tested with ember 2.7.3
+
 # Installation
 
 npm install
@@ -8,7 +11,7 @@ npm start
 
 Browse to http://127.0.0.1:4200
 
-# Requirements
+# Mission
 
 2)
 
